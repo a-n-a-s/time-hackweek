@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { differenceInMinutes, setHours, setMinutes, format } from "date-fns";
 import { toZonedTime } from "date-fns-tz";
-import timezones from "./utils.json"; // assuming it exports an array of timezone strings
-
+import timezones from "./utils.json"; /
 const TimezoneMeetingFinder = () => {
   const [cities, setCities] = useState([""]);
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const timeRange = { start: 9, end: 20 }; // 9 AM to 8 PM
+  const timeRange = { start: 9, end: 20 }; 
 
   const getTimeZone = (input) => {
     return timezones.find((z) => z.toLowerCase().includes(input.toLowerCase())) || null;
